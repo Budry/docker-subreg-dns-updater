@@ -10,11 +10,8 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "hugo [DOMAIN] [IP] [DNS NAME]",
-	Short: "Hugo is a very fast static site generator",
-	Long: `A Fast and Flexible Static Site Generator built with
-                love by spf13 and friends in Go.   
-                Complete documentation is available at http://hugo.spf13.com`,
+	Use:   "subreg-dns-updater-cli [DOMAIN] [IP] [DNS NAME]",
+	Short: "Simple API for add or update DNS record at subreg.cz",
 	Args: cobra.ExactArgs(3),
 	Run: func(cmd *cobra.Command, args []string) {
 
