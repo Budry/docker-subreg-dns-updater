@@ -5,7 +5,7 @@ import (
 	"errors"
 	"os"
 
-	"github.com/Budry/subreg-dns-updater-cli/utils"
+	"github.com/Budry/docker-subreg-dns-updater/utils"
 )
 
 type DNSManager struct {

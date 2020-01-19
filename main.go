@@ -3,20 +3,25 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
 	"os"
 
 	"docker.io/go-docker"
 	"docker.io/go-docker/api/types"
-	"github.com/Budry/subreg-dns-updater-cli/ip"
-	"github.com/Budry/subreg-dns-updater-cli/subreg"
-	"github.com/Budry/subreg-dns-updater-cli/utils"
+	"github.com/Budry/docker-subreg-dns-updater/ip"
+	"github.com/Budry/docker-subreg-dns-updater/subreg"
+	"github.com/Budry/docker-subreg-dns-updater/utils"
 )
 
 func main() {
 
 	service := subreg.NewSubregCz("", false, &subreg.BasicAuth{})
+	publicIp, err := ip.GetPublicIp()
+	if err != nil {
+		log.Fatalln(err)
+	}
 	dnsManager := subreg.DNSManager{
-		Ip:     ip.GetPublicIp(),
+		Ip:     publicIp,
 		Client: service,
 	}
 

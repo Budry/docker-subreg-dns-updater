@@ -1,4 +1,4 @@
-module github.com/Budry/subreg-dns-updater-cli
+module github.com/Budry/docker-subreg-dns-updater
 
 go 1.13
 
