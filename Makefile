@@ -1,5 +1,6 @@
-OUTPUT=subreg-dns-updater-cli
+OUTPUT=docker-subreg-dns-updater
 
 all: build
 build:
-		go build -o dist/$(OUTPUT) -v
+		docker build -t budry/docker-subreg-dns-updater .
+		docker push budry/docker-subreg-dns-updater

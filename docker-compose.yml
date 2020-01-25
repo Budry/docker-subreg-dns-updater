@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  dns-update:
+    image: budry/docker-subreg-dns-updater
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      SUBREG_PASSWORD: password
+      SUBREG_USER: user
