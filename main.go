@@ -25,9 +25,7 @@ func main() {
 		Client: service,
 	}
 
-	hostname, _ := os.Hostname()
-	serverName := hostname + "." + os.Getenv("DOMAIN")
-	err = dnsManager.Update(serverName)
+	err = dnsManager.Update(os.Getenv("HOSTNAME"))
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error: %v\n", err)
 	}
