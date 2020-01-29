@@ -19,6 +19,5 @@ FROM alpine
 RUN apk add docker
 
 COPY --from=builder /go/bin/docker-subreg-dns-updater /usr/bin/docker-subreg-dns-updater
-RUN ls -la /usr/bin
 
 ENTRYPOINT ["docker-subreg-dns-updater"]
